@@ -8,20 +8,14 @@
 
  int main() {
      stdio_init_all();
-     int d = 0;
-     printf("Hello, world %d!\n",d);
+
+     printf("pico_demo_usb_stdio\n");
      while (true) {
-
-         //sleep_ms(1000);
-
+         // Read incoming characters and write them back
          int input = stdio_getchar_timeout_us(1000);
          if (input!=PICO_ERROR_TIMEOUT)
          {
              printf("%c",input);
          }
-
-
-         //scanf("%s",&d);
-         //stdio_flush();
      }
  }
